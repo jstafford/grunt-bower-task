@@ -8,7 +8,7 @@
 ## Getting Started
 _If you haven't used [grunt][] before, be sure to check out the [Getting Started][] guide._
 
-Please note, this plugin works **only with grunt 0.4+**. If you are using grunt 0.3.x then consider an [upgrade to 0.4][].
+Please note, this plugin requires ** grunt 1.0.1 or newer**. If you are using grunt 0.4.x then consider an [upgrade to 1.0.1][].
 
 From the same directory as your project's [Gruntfile][Getting Started] and [package.json][], install this plugin with the following command:
 
@@ -25,9 +25,9 @@ grunt.loadNpmTasks('grunt-bower-task');
 If the plugin has been installed correctly, running `grunt --help` at the command line should list the newly-installed plugin's task or tasks. In addition, the plugin should be listed in package.json as a `devDependency`, which ensures that it will be installed whenever the `npm install` command is run.
 
 [grunt]: http://gruntjs.com/
-[Getting Started]: https://github.com/gruntjs/grunt/wiki/Getting-started
+[Getting Started]: http://gruntjs.com/getting-started
 [package.json]: https://npmjs.org/doc/json.html
-[upgrade to 0.4]: https://github.com/gruntjs/grunt/wiki/Upgrading-from-0.3-to-0.4
+[upgrade to 1.0.1]: http://gruntjs.com/upgrading-from-0.4-to-1.0
 
 ## Grunt task for Bower
 

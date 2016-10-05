@@ -83,12 +83,14 @@ BowerAssets.prototype.mergePaths = function(bowerComponents, overrides) {
   };
 
   _(bowerComponents).each(function(pkgFiles, pkg) {
-    var activeOverride = findOverride(pkg);
+    if (this.assets) {
+      var activeOverride = findOverride(pkg);
 
-    if (activeOverride) {
-      this.assets.addOverridden(activeOverride, pkg);
-    } else {
-      this.assets.addUntyped(pkgFiles, pkg);
+      if (activeOverride) {
+        this.assets.addOverridden(activeOverride, pkg);
+      } else {
+        this.assets.addUntyped(pkgFiles, pkg);
+      }
     }
   }, this);
 

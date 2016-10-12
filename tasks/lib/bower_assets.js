@@ -34,7 +34,7 @@ Assets.prototype.addAssets = function(filePatterns, pkg, assetType, pkgPath) {
   this._assets[assetType] = this._assets[assetType] || {};
   this._assets[assetType][pkg] = _(grunt.file.expand({cwd: basePath}, filePatterns)).map(function(expandedPath) {
     return path.join(pkgPath, expandedPath);
-  });
+  }).value();
 };
 
 Assets.prototype.toObject = function() {
@@ -83,15 +83,13 @@ BowerAssets.prototype.mergePaths = function(bowerComponents, overrides) {
   };
 
   _(bowerComponents).each(function(pkgFiles, pkg) {
-    if (this.assets) {
-      var activeOverride = findOverride(pkg);
+    var activeOverride = findOverride(pkg);
 
       if (activeOverride) {
         this.assets.addOverridden(activeOverride, pkg);
       } else {
         this.assets.addUntyped(pkgFiles, pkg);
       }
-    }
   }, this);
 
   return this.assets.toObject();

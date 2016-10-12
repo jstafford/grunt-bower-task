@@ -60,7 +60,8 @@ exports.bower_assets = {
       },
       config: {
         json: 'component.json',
-        directory: 'components'
+        directory: 'components',
+        verbose: true
       }
     };
 
